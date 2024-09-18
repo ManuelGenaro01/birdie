@@ -43,10 +43,19 @@ const App = () => {
     addDoc(tweetsCollection, newTweet);
   };
   const handleClick = (e) => {
-    getTweets();
-    e.preventDefault();
-    newItem(name);
-    setName("");
+    if(!name){
+      
+      e.preventDefault();
+      alert("No puedes insertar un tweet vacio!")
+    }
+    else{
+
+      getTweets();
+      e.preventDefault();
+      newItem(name);
+      setName("");
+    }
+    
   };
 
   return (
